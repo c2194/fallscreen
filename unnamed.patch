@@ -1,0 +1,43 @@
+Index: app/src/main/java/com/example/fallscreen/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/fallscreen/MainActivity.java	(revision 99120cc47fcd6152ead4ffb0ab23976bf879122b)
++++ app/src/main/java/com/example/fallscreen/MainActivity.java	(date 1567008385367)
+@@ -2,7 +2,9 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++import android.os.Build;
+ import android.os.Bundle;
++import android.view.View;
+ 
+ public class MainActivity extends AppCompatActivity {
+ 
+@@ -11,4 +13,25 @@
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+     }
++
++
++
++
++    @Override
++    public void onWindowFocusChanged(boolean hasFocus) {
++        super.onWindowFocusChanged(hasFocus);
++        if (hasFocus && Build.VERSION.SDK_INT >= 19) {
++            View decorView = getWindow().getDecorView();
++            decorView.setSystemUiVisibility(
++                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
++                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
++                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
++                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
++                            | View.SYSTEM_UI_FLAG_FULLSCREEN
++                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
++        }
++    }
++
++
++
+ }
