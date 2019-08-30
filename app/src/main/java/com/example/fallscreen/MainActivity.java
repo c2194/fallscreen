@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -204,139 +205,46 @@ test2();
     protected void test2(){
 
         p.setARGB(255,255,255,255);
-        mCanvas.drawARGB(255, 0, 0, 0);
-        mCanvas.drawPoints(new float[]{417,4,
-                417,5,
+        mCanvas.drawARGB(255, 30, 0, 0);
 
-                427,5,
-                427,6,
 
-                437,8,
-                437,9,
+        int larrlong = llcou.fPath.length;
 
-                445,12,
-                445,13,
+        //for(int i=1;i<larrlong;i++) {
 
-                453,19,
-                453,20,
+          //  mCanvas.drawLine(llcou.fPath[i-1][0],llcou.fPath[i-1][1],llcou.fPath[i][0],llcou.fPath[i][1], p);
 
+        //}
+        p.setStyle(Paint.Style.STROKE);
 
-                460,28,
-                460,29,
+        //RectF rectf = new RectF(220,220,600,600);
 
-                465,39,
-                465,40,
 
 
+        mCanvas.drawArc(5,5,180,180,180,90,false,p);
 
 
-                470,51,
-                470,52,
 
-                474,60,
-                474,61,
 
 
-                480,69,
-                480,70,
+        mCanvas.drawArc(461,-70,619,100,170,-160,false,p);
 
+        mCanvas.drawLine(80,5,420,5,p);
 
 
-                487,78,
-                487,79,
 
+        mCanvas.drawArc(360,5,462,60,-90,85,false,p);
 
-                495,85,
-                495,86,
+//        mCanvas.drawArc(620,5,722,60,180,85,false,p);
 
+        mCanvas.drawArc(618,5,720,60,-90,-85,false,p);
 
-                504,91,
-                504,92,
+        mCanvas.drawLine(670,5,985,5,p);
 
+        mCanvas.drawArc(895,5,1075,180,0,-90,false,p);
 
 
-
-                514,96,
-                514,97,
-
-                526,98,
-                526,99,
-
-
-
-                540,100,
-                540,101,
-
-
-                554,98,
-                554,99,
-
-
-                566,96,
-                566,97,
-
-
-                576,91,
-                576,92,
-
-
-                585,85,
-                585,86,
-
-
-                593,78,
-                593,79,
-
-
-                600,69,
-                600,70,
-
-
-
-                606,60,
-                606,61,
-
-
-                610,51,
-                610,52,
-
-
-
-                615,39,
-                615,40,
-
-
-                620,28,
-                620,29,
-
-                627,19,
-                627,20,
-
-
-                635,12,
-                635,13,
-
-                643,8,
-                643,9,
-
-                653,5,
-                653,6,
-
-
-                663,4,
-                553,5
-
-
-        },p);
-
-
-
-
-
-
-
-
-
+        mCanvas.drawLine(1074,93,1074,2000,p);
 
 
 
