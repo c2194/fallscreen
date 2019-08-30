@@ -244,7 +244,7 @@ test2();
         mCanvas.drawArc(895,5,1075,180,0,-90,false,p);
 
 
-        mCanvas.drawLine(1074,93,1074,2000,p);
+        mCanvas.drawLine(1074,93,1074,2200,p);
 
 
 
