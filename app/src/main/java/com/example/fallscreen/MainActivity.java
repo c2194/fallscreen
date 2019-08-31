@@ -49,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
         llcou = new LLcou();
 
         //testpaint();
-test2();
+//test2();
 
+        DrawRing(5,10,100,100,100);
 
 
 
@@ -308,38 +309,124 @@ protected void  DrawRing(int dstart,int dlong,int cR,int cG,int cB){
     float rpspot = allpathlong /1000; //每d点 对应的实际点长
 
     int dsspot =(int)(dstart * rpspot); //开始点位
+    int dsspotOK=0;
     int dslongspot = (int)(dlong * rpspot); // 点位长度
-
+    int dslongspotOK=0;
     int starpar =0;
     int endpar = 0;
     int before = 0;
+    int beadd=0;
+    int enLine = 0; //最后一段线的线长度
+    int stLine = 0;  //起点位置
+    int theStLine =0;
+    int theEnLine=0;
 
     for (int i=0;i<rplength;i++){
 
-        if (llcou.ringPath[i][7] < dsspot){
+
+
+
+
+        if (dslongspot<(beadd+llcou.ringPath[i][7]) && dslongspotOK == 0 ){
+
+            dslongspotOK =1; //已经找到 关闭查找状态
+            endpar = i;
+
+            enLine = dslongspot-beadd;
+
+
+        }
+
+
+
+        if (dsspot<(beadd+llcou.ringPath[i][7]) && dsspotOK == 0 ){
+
+            dsspotOK =1; //已经找到 关闭查找状态
             starpar = i;  //得出起点位于的线段
-            break;
+
+            stLine = dsspot - beadd; //求出固定线段的起点
+
+
+            // 开始和结束都位于一个线段
+
+
         }
+
+
+
+            if(i==0){
+
+                if (dslongspotOK ==1  && dsspotOK ==1) { //如果是结束
+
+                    mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
+
+                    break;
+
+                }else{
+
+                    if (i==starpar){ // 如果是开始
+
+                        mCanvas.drawArc(5,5,180,180,180+stLine,90-stLine,false,p);
+
+                    }else{  // 如果是中间线段则画完整线段
+
+                        mCanvas.drawArc(5,5,180,180,180,90,false,p);
+
+                    }
+
+
+
+
+                }
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+        beadd = beadd + llcou.ringPath[i][7];
+
     }
 
-
-
-    for (int i=0;i<rplength;i++){
-
-        if (llcou.ringPath[i][7] < dslongspot){
-            endpar = i;  //结束点位于的线段
-            break;
-        }
-    }
 
 
 
     int spanpar = endpar -starpar; //跨距
+    int past =0;
 
 
-    for (int i=0;i<spanpar;i++ ){
+    for (int i=0;i<rplength;i++ ){
 
         // 可以开始画了
+        if(i==0){
+            if(endpar == i){
+                mCanvas.drawArc(5,5,180,180,180,endpar,false,p);
+            }else{
+                mCanvas.drawArc(5,5,180,180,180,90,false,p);
+            }
+        }
+
+        if(i==1){
+            if(endpar == i){
+                mCanvas.drawArc(5,5,180,180,180,endpar,false,p);
+            }else{
+                mCanvas.drawArc(5,5,180,180,180,90,false,p);
+            }
+        }
+
+
+
 
 
 
