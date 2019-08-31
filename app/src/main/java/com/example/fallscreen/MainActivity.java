@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.DrawFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Build;
@@ -208,7 +209,7 @@ test2();
         mCanvas.drawARGB(255, 0, 0, 0);
 
 
-        int larrlong = llcou.fPath.length;
+        //int larrlong = llcou.fPath.length;
 
         //for(int i=1;i<larrlong;i++) {
 
@@ -224,41 +225,147 @@ test2();
         mCanvas.drawArc(5,5,180,180,180,90,false,p);
 
 
+        mCanvas.drawLine(93,5,412,5,p);
 
 
 
-        mCanvas.drawArc(461,-70,619,100,170,-160,false,p);
 
-        mCanvas.drawLine(80,5,420,5,p);
+
 
 
 
         mCanvas.drawArc(360,5,462,60,-90,85,false,p);
 
-//        mCanvas.drawArc(620,5,722,60,180,85,false,p);
+
+        mCanvas.drawArc(461,-70,619,100,170,-160,false,p);
+
+
+
 
         mCanvas.drawArc(618,5,720,60,-90,-85,false,p);
 
-        mCanvas.drawLine(670,5,985,5,p);
+        //mCanvas.drawLine(668,5,985,5,p);
 
-        mCanvas.drawArc(895,5,1075,180,0,-90,false,p);
-
-
-        mCanvas.drawLine(1074,93,1074,2145,p);
+        //mCanvas.drawArc(895,5,1075,180,0,-90,false,p);
 
 
-        mCanvas.drawArc(895,2055,1075,2235,90,-90,false,p);
+        //mCanvas.drawLine(1074,93,1074,2145,p);
 
 
-        mCanvas.drawLine(93,2235,984,2235,p);
+        //mCanvas.drawArc(895,2055,1075,2235,90,-90,false,p);
 
-        mCanvas.drawArc(5,2055,180,2235,180,-90,false,p);
 
-        mCanvas.drawLine(5,93,5,2145,p);
+       // mCanvas.drawLine(93,2235,986,2235,p);
+
+        //mCanvas.drawArc(5,2055,180,2235,180,-90,false,p);
+
+        //mCanvas.drawLine(5,93,5,2145,p);
 
 
 
     }
+
+
+
+
+    //方法设想
+    /*
+
+     先定义一个线长度，然后 写线上的特征标记 ，根据特征标记画
+     特征有 四个角 ，左 右 眉峰 眉尖半圆
+     总长度 估计：
+
+     90       319    85      85         317     90
+                         180
+
+
+      2052                                     2052
+
+
+
+      90                 893                     90
+     */
+
+
+protected void  DrawRing(int dstart,int dlong,int cR,int cG,int cB){
+
+
+    /*
+    总控制长度 为 1000 点约为 6343 每个角度 算作一个点
+
+
+
+    读出数据
+
+    先判断 dstart 的值 位于哪个线段上 跨越几个线段
+
+
+     */
+
+    //判断位于那一段
+    int rplength = llcou.ringPath.length;
+    int  allpathlong=6343;
+    float rpspot = allpathlong /1000; //每d点 对应的实际点长
+
+    int dsspot =(int)(dstart * rpspot); //开始点位
+    int dslongspot = (int)(dlong * rpspot); // 点位长度
+
+    int starpar =0;
+    int endpar = 0;
+    int before = 0;
+
+    for (int i=0;i<rplength;i++){
+
+        if (llcou.ringPath[i][7] < dsspot){
+            starpar = i;  //得出起点位于的线段
+            break;
+        }
+    }
+
+
+
+    for (int i=0;i<rplength;i++){
+
+        if (llcou.ringPath[i][7] < dslongspot){
+            endpar = i;  //结束点位于的线段
+            break;
+        }
+    }
+
+
+
+    int spanpar = endpar -starpar; //跨距
+
+
+    for (int i=0;i<spanpar;i++ ){
+
+        // 可以开始画了
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
