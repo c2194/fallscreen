@@ -205,7 +205,7 @@ test2();
     protected void test2(){
 
         p.setARGB(255,255,255,255);
-        mCanvas.drawARGB(255, 30, 0, 0);
+        mCanvas.drawARGB(255, 0, 0, 0);
 
 
         int larrlong = llcou.fPath.length;
@@ -244,7 +244,17 @@ test2();
         mCanvas.drawArc(895,5,1075,180,0,-90,false,p);
 
 
-        mCanvas.drawLine(1074,93,1074,2200,p);
+        mCanvas.drawLine(1074,93,1074,2145,p);
+
+
+        mCanvas.drawArc(895,2055,1075,2235,90,-90,false,p);
+
+
+        mCanvas.drawLine(93,2235,984,2235,p);
+
+        mCanvas.drawArc(5,2055,180,2235,180,-90,false,p);
+
+        mCanvas.drawLine(5,93,5,2145,p);
 
 
 
