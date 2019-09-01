@@ -40,10 +40,9 @@ public class MainActivity extends AppCompatActivity {
         mCanvas = new Canvas(bitmap);
 
         mCanvas.drawARGB(255, 0, 0, 0);
-        mCanvas.drawRect(10, 10, 200, 200, p);
+        //  mCanvas.drawRect(10, 10, 200, 200, p);
         // mCanvas.drawARGB(255,0,0,0);
         mView.setImageBitmap(bitmap);
-
 
 
         llcou = new LLcou();
@@ -51,16 +50,10 @@ public class MainActivity extends AppCompatActivity {
         //testpaint();
 //test2();
 
-        DrawRing(5,10,100,100,100);
+        DrawRing(30, 820, 100, 100, 100);
 
 
-
-
-       // new Thread(new TimThread ()).start();
-
-
-
-
+        // new Thread(new TimThread ()).start();
 
 
     }
@@ -80,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 
 
     protected void Frame() {
@@ -121,14 +113,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            switch (msg.what){
+            switch (msg.what) {
                 case 1:
-                    System.out.println("接收到DownloadThread发送的消息:"  + msg.arg1);
+                    System.out.println("接收到DownloadThread发送的消息:" + msg.arg1);
                     testpaint();
                     break;
             }
@@ -137,13 +128,12 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
-
     public class TimThread extends Thread {
 
 
         @Override
         public void run() {
-            while (true){
+            while (true) {
                 try {
                     Thread.sleep(5);//每隔1s执行一次
                     Message msg = new Message();
@@ -157,13 +147,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
     }
 
 
-    int pl,pt,pr,pb;
+    int pl, pt, pr, pb;
 
-    protected void testpaint(){
+    protected void testpaint() {
 
         pl++;
         pt++;
@@ -175,19 +164,18 @@ public class MainActivity extends AppCompatActivity {
         // mCanvas.drawARGB(255,0,0,0);
         // 直线 曲线 曲线角度
 
-        int tvary_index=1;//当前颜色标记的位置
-        int tVary=0;
-        tVary=llcou.lightline[tvary_index][3]; //取得第一个颜色终点数据
-        p.setARGB(255,llcou.lightline[1][0],llcou.lightline[1][1],llcou.lightline[1][2]);
-        for (int i=1;i<llcou.lightline[0][0];i++){
+        int tvary_index = 1;//当前颜色标记的位置
+        int tVary = 0;
+        tVary = llcou.lightline[tvary_index][3]; //取得第一个颜色终点数据
+        p.setARGB(255, llcou.lightline[1][0], llcou.lightline[1][1], llcou.lightline[1][2]);
+        for (int i = 1; i < llcou.lightline[0][0]; i++) {
 
-            mCanvas.drawPoints(new float[]{100,200+i,101,200+i},p);
-            if(tVary == i){
+            mCanvas.drawPoints(new float[]{100, 200 + i, 101, 200 + i}, p);
+            if (tVary == i) {
 
                 tvary_index++;
-                tVary=llcou.lightline[tvary_index][3];
-                p.setARGB(255,llcou.lightline[tvary_index][0],llcou.lightline[tvary_index][1],llcou.lightline[tvary_index][2]);
-
+                tVary = llcou.lightline[tvary_index][3];
+                p.setARGB(255, llcou.lightline[tvary_index][0], llcou.lightline[tvary_index][1], llcou.lightline[tvary_index][2]);
 
 
             }
@@ -196,17 +184,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
         mView.setImageBitmap(bitmap);
-
-
 
 
     }
 
-    protected void test2(){
+    protected void test2() {
 
-        p.setARGB(255,255,255,255);
+        p.setARGB(255, 255, 255, 255);
         mCanvas.drawARGB(255, 0, 0, 0);
 
 
@@ -214,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
 
         //for(int i=1;i<larrlong;i++) {
 
-          //  mCanvas.drawLine(llcou.fPath[i-1][0],llcou.fPath[i-1][1],llcou.fPath[i][0],llcou.fPath[i][1], p);
+        //  mCanvas.drawLine(llcou.fPath[i-1][0],llcou.fPath[i-1][1],llcou.fPath[i][0],llcou.fPath[i][1], p);
 
         //}
         p.setStyle(Paint.Style.STROKE);
@@ -222,28 +207,19 @@ public class MainActivity extends AppCompatActivity {
         //RectF rectf = new RectF(220,220,600,600);
 
 
-
-        mCanvas.drawArc(5,5,180,180,180,90,false,p);
-
-
-        mCanvas.drawLine(93,5,412,5,p);
+       // mCanvas.drawArc(5, 5, 180, 180, 180, 90, false, p);
 
 
+       // mCanvas.drawLine(93, 5, 412, 5, p);
 
 
+       // mCanvas.drawArc(360, 5, 462, 60, -90, 85, false, p);
 
 
+        //mCanvas.drawArc(461, -70, 619, 100, 170, -160, false, p);
 
 
-        mCanvas.drawArc(360,5,462,60,-90,85,false,p);
-
-
-        mCanvas.drawArc(461,-70,619,100,170,-160,false,p);
-
-
-
-
-        mCanvas.drawArc(618,5,720,60,-90,-85,false,p);
+        mCanvas.drawArc(618, 5, 720, 60, 180, 85, false, p);
 
         //mCanvas.drawLine(668,5,985,5,p);
 
@@ -256,17 +232,15 @@ public class MainActivity extends AppCompatActivity {
         //mCanvas.drawArc(895,2055,1075,2235,90,-90,false,p);
 
 
-       // mCanvas.drawLine(93,2235,986,2235,p);
+        // mCanvas.drawLine(93,2235,986,2235,p);
 
         //mCanvas.drawArc(5,2055,180,2235,180,-90,false,p);
 
         //mCanvas.drawLine(5,93,5,2145,p);
 
-
+        mView.setImageBitmap(bitmap);
 
     }
-
-
 
 
     //方法设想
@@ -288,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
      */
 
 
-protected void  DrawRing(int dstart,int dlong,int cR,int cG,int cB){
+    protected void DrawRing(int dstart, int dlong, int cR, int cG, int cB) {
 
 
     /*
@@ -303,87 +277,225 @@ protected void  DrawRing(int dstart,int dlong,int cR,int cG,int cB){
 
      */
 
-    //判断位于那一段
-    int rplength = llcou.ringPath.length;
-    int  allpathlong=6343;
-    float rpspot = allpathlong /1000; //每d点 对应的实际点长
+        //判断位于那一段
+        int rplength = llcou.ringPath.length;
+        int allpathlong = 6343;
+        float rpspot = allpathlong / 1000; //每d点 对应的实际点长
 
-    int dsspot =(int)(dstart * rpspot); //开始点位
-    int dsspotOK=0;
-    int dslongspot = (int)(dlong * rpspot); // 点位长度
-    int dslongspotOK=0;
-    int starpar =0;
-    int endpar = 0;
-    int before = 0;
-    int beadd=0;
-    int enLine = 0; //最后一段线的线长度
-    int stLine = 0;  //起点位置
-    int theStLine =0;
-    int theEnLine=0;
+        int dsspot = (int) (dstart * rpspot); //开始点位
+        int dsspotOK = 0;
+        int dslongspot = (int) (dlong * rpspot); // 点位长度
+        int dslongspotOK = 0;
+        int starpar = 0;
+        int endpar = 0;
+        int before = 0;
+        int beadd = 0;
+        int enLine = 0; //最后一段线的线长度
+        int stLine = 0;  //起点位置
+        int theStLine = 0;
+        int theEnLine = 0;
 
-    for (int i=0;i<rplength;i++){
+        p.setARGB(255, 255, 255, 255);
+        p.setStyle(Paint.Style.STROKE);
+        mCanvas.drawARGB(255, 0, 0, 0);
 
 
+        for (int i = 0; i < rplength; i++) {
 
 
+            if (dlong <= (beadd + llcou.ringPath[i][7]) && dslongspotOK == 0) {
 
-        if (dslongspot<(beadd+llcou.ringPath[i][7]) && dslongspotOK == 0 ){
+                dslongspotOK = 1; //已经找到 关闭查找状态
+                endpar = i;
 
-            dslongspotOK =1; //已经找到 关闭查找状态
-            endpar = i;
+                enLine = dlong - beadd;
 
-            enLine = dslongspot-beadd;
 
+            }
+
+
+            if (dstart <= (beadd + llcou.ringPath[i][7]) && dsspotOK == 0) {
+
+                dsspotOK = 1; //已经找到 关闭查找状态
+                starpar = i;  //得出起点位于的线段
+
+                stLine = dstart - beadd; //求出固定线段的起点
+
+
+                // 开始和结束都位于一个线段
+
+
+            }
+
+            beadd = beadd + llcou.ringPath[i][7];
 
         }
+        for (int i = starpar; i <= endpar; i++) {
 
+            if (i == 0) {
 
-
-        if (dsspot<(beadd+llcou.ringPath[i][7]) && dsspotOK == 0 ){
-
-            dsspotOK =1; //已经找到 关闭查找状态
-            starpar = i;  //得出起点位于的线段
-
-            stLine = dsspot - beadd; //求出固定线段的起点
-
-
-            // 开始和结束都位于一个线段
-
-
-        }
-
-
-
-            if(i==0){
-
-                if (dslongspotOK ==1  && dsspotOK ==1) { //如果是结束
+                if (starpar == i && endpar == i) {
 
                     mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
 
-                    break;
 
-                }else{
+                }
 
-                    if (i==starpar){ // 如果是开始
 
-                        mCanvas.drawArc(5,5,180,180,180+stLine,90-stLine,false,p);
+                if (starpar == i && endpar > i) { // 如果是开始
 
-                    }else{  // 如果是中间线段则画完整线段
+                    mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, 90-stLine , false, p);
 
-                        mCanvas.drawArc(5,5,180,180,180,90,false,p);
+                }
 
-                    }
+                if (starpar < i && endpar > i) {
 
+                    mCanvas.drawArc(5, 5, 180, 180, 180, 90, false, p);
+
+                }
+
+
+            }
+
+
+            if (i == 1) {
+
+                if(starpar != i){
+                    stLine=0;
+                }
+
+
+                if (endpar == i) {
+                    mCanvas.drawLine(93 + stLine, 5, 93 + enLine - stLine, 5, p);
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始但 没有结束
+
+
+                    mCanvas.drawLine(93 + stLine, 5, 412 , 5, p);
+
+                }
+                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
+
+                    mCanvas.drawLine(93, 5, 412, 5, p);
+
+                }
+
+            }
+
+
+            if (i == 2) {
+                if(starpar != i){
+                    stLine=0;
+                }
+
+                //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
+                if (endpar == i) {
+                    mCanvas.drawArc(360, 5, 462, 60, -90 + stLine, enLine - stLine, false, p);
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始
+
+                    mCanvas.drawArc(360, 5, 462, 60, -90 + stLine, 90 , false, p);
+                }
+
+                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
+
+                    mCanvas.drawArc(360, 5, 462, 60, -90, 85, false, p);
+                }
+            }
+
+
+
+            if (i == 3) {
+                if(starpar != i){
+                    stLine=0;
+                }
+
+                //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
+                if (endpar == i) {
+
+                    mCanvas.drawArc(461, -70, 619, 100, 170+stLine, (enLine - stLine)* -1, false, p);
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始
+
+                    mCanvas.drawArc(461, -70, 619, 100, 170 + stLine, (160 - stLine)* -1, false, p);
+
+
+                }
+
+                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
+
+
+                    mCanvas.drawArc(461, -70, 619, 100, 170, -160, false, p);
+                }
+            }
+
+
+
+
+
+
+            if (i == 3) {
+                if(starpar != i){
+                    stLine=0;
+                }
+
+                //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
+                if (endpar == i) {
+
+                    mCanvas.drawArc(461, -70, 619, 100, 170+stLine, (enLine - stLine)* -1, false, p);
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始
+
+                    mCanvas.drawArc(461, -70, 619, 100, 170 + stLine, (160 - stLine)* -1, false, p);
+
+
+                }
+
+                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
+
+
+                    mCanvas.drawArc(461, -70, 619, 100, 170, -160, false, p);
+                }
+            }
+
+
+
+
+
+            if (i == 4) {
+                if(starpar != i){
+                    stLine=0;
+                }
+
+                //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
+                if (endpar == i) {
+
+                    mCanvas.drawArc(618, 5, 720, 60, 180+stLine, enLine - stLine, false, p);
 
 
 
                 }
 
 
+                if (starpar == i && endpar > i) { // 如果是开始
+
+                    mCanvas.drawArc(618, 5, 720, 60, 180+stLine, 85, false, p);
+
+                }
+
+                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
 
 
-
-
+                    mCanvas.drawArc(618, 5, 720, 60, 180, 85, false, p);
+                }
             }
 
 
@@ -391,68 +503,17 @@ protected void  DrawRing(int dstart,int dlong,int cR,int cG,int cB){
 
 
 
-
-
-
-
-        beadd = beadd + llcou.ringPath[i][7];
-
-    }
-
-
-
-
-    int spanpar = endpar -starpar; //跨距
-    int past =0;
-
-
-    for (int i=0;i<rplength;i++ ){
-
-        // 可以开始画了
-        if(i==0){
-            if(endpar == i){
-                mCanvas.drawArc(5,5,180,180,180,endpar,false,p);
-            }else{
-                mCanvas.drawArc(5,5,180,180,180,90,false,p);
-            }
-        }
-
-        if(i==1){
-            if(endpar == i){
-                mCanvas.drawArc(5,5,180,180,180,endpar,false,p);
-            }else{
-                mCanvas.drawArc(5,5,180,180,180,90,false,p);
-            }
         }
 
 
+        int spanpar = endpar - starpar; //跨距
+        int past = 0;
 
 
-
-
-
+        mView.setImageBitmap(bitmap);
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
@@ -460,6 +521,5 @@ protected void  DrawRing(int dstart,int dlong,int cR,int cG,int cB){
 
 
 
-}
 
 
