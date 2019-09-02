@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
         //testpaint();
 //test2();
 
-        DrawRing(30, 820, 100, 100, 100);
 
+      //  DrawRing(1186, 1336, 100, 100, 100);
 
-        // new Thread(new TimThread ()).start();
+         new Thread(new TimThread ()).start();
 
-
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
 
@@ -119,8 +120,11 @@ public class MainActivity extends AppCompatActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1:
-                    System.out.println("接收到DownloadThread发送的消息:" + msg.arg1);
-                    testpaint();
+                    //System.out.println("接收到DownloadThread发送的消息:" + msg.arg1);
+                    //testpaint();
+
+                    animation();
+
                     break;
             }
 
@@ -135,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             while (true) {
                 try {
-                    Thread.sleep(5);//每隔1s执行一次
+                    Thread.sleep(30);//每隔1s执行一次
                     Message msg = new Message();
                     msg.what = 1;
                     handler.sendMessage(msg);
@@ -216,25 +220,25 @@ public class MainActivity extends AppCompatActivity {
        // mCanvas.drawArc(360, 5, 462, 60, -90, 85, false, p);
 
 
-        //mCanvas.drawArc(461, -70, 619, 100, 170, -160, false, p);
+        mCanvas.drawArc(461, -70, 619, 100, 170, -60, false, p);
 
 
-        mCanvas.drawArc(618, 5, 720, 60, 180, 85, false, p);
+       // mCanvas.drawArc(616, 5, 720, 76, 185, 90, false, p);
 
-        //mCanvas.drawLine(668,5,985,5,p);
+        mCanvas.drawLine(668,5,985,5,p);
 
-        //mCanvas.drawArc(895,5,1075,180,0,-90,false,p);
-
-
-        //mCanvas.drawLine(1074,93,1074,2145,p);
+        mCanvas.drawArc(895,5,1075,180,270,90,false,p);
 
 
-        //mCanvas.drawArc(895,2055,1075,2235,90,-90,false,p);
+        mCanvas.drawLine(1074,93,1074,2145,p);
 
 
-        // mCanvas.drawLine(93,2235,986,2235,p);
+        mCanvas.drawArc(895,2055,1075,2235,0,45,false,p);
 
-        //mCanvas.drawArc(5,2055,180,2235,180,-90,false,p);
+
+         mCanvas.drawLine(986,2235,986 -780,2235,p);
+
+        mCanvas.drawArc(5,2055,180,2235,90,90,false,p);
 
         //mCanvas.drawLine(5,93,5,2145,p);
 
@@ -366,7 +370,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (endpar == i) {
-                    mCanvas.drawLine(93 + stLine, 5, 93 + enLine - stLine, 5, p);
+                    mCanvas.drawLine(93 + stLine, 5, 93 + enLine , 5, p);
                 }
 
 
@@ -398,7 +402,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (starpar == i && endpar > i) { // 如果是开始
 
-                    mCanvas.drawArc(360, 5, 462, 60, -90 + stLine, 90 , false, p);
+                    mCanvas.drawArc(360, 5, 462, 60, -90 + stLine, 90-stLine , false, p);
                 }
 
                 if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
@@ -409,35 +413,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            if (i == 3) {
-                if(starpar != i){
-                    stLine=0;
-                }
-
-                //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
-                if (endpar == i) {
-
-                    mCanvas.drawArc(461, -70, 619, 100, 170+stLine, (enLine - stLine)* -1, false, p);
-                }
-
-
-                if (starpar == i && endpar > i) { // 如果是开始
-
-                    mCanvas.drawArc(461, -70, 619, 100, 170 + stLine, (160 - stLine)* -1, false, p);
-
-
-                }
-
-                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
-
-
-                    mCanvas.drawArc(461, -70, 619, 100, 170, -160, false, p);
-                }
-            }
-
-
-
-
 
 
             if (i == 3) {
@@ -448,13 +423,15 @@ public class MainActivity extends AppCompatActivity {
                 //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
                 if (endpar == i) {
 
-                    mCanvas.drawArc(461, -70, 619, 100, 170+stLine, (enLine - stLine)* -1, false, p);
+                    mCanvas.drawArc(461, -70, 619, 100, 170- stLine, (enLine - stLine)* -1, false, p);
+
+
                 }
 
 
                 if (starpar == i && endpar > i) { // 如果是开始
 
-                    mCanvas.drawArc(461, -70, 619, 100, 170 + stLine, (160 - stLine)* -1, false, p);
+                    mCanvas.drawArc(461, -70, 619, 100, 170 - stLine, (155 - stLine)*-1, false, p);
 
 
                 }
@@ -462,7 +439,7 @@ public class MainActivity extends AppCompatActivity {
                 if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
 
 
-                    mCanvas.drawArc(461, -70, 619, 100, 170, -160, false, p);
+                    mCanvas.drawArc(461, -70, 619, 100, 170, -155, false, p);
                 }
             }
 
@@ -478,7 +455,214 @@ public class MainActivity extends AppCompatActivity {
                 //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
                 if (endpar == i) {
 
-                    mCanvas.drawArc(618, 5, 720, 60, 180+stLine, enLine - stLine, false, p);
+                    mCanvas.drawArc(616, 5, 720, 76, 185+stLine, enLine - stLine, false, p);
+
+
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始
+
+                    mCanvas.drawArc(616, 5, 720, 76, 185+stLine, 90-stLine , false, p);
+
+                }
+
+                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
+
+
+                    mCanvas.drawArc(616, 5, 720, 76, 185, 90, false, p);
+                }
+            }
+
+
+
+            if (i == 5) {
+
+                if(starpar != i){
+                    stLine=0;
+                }
+
+
+                if (endpar == i) {
+                    mCanvas.drawLine(668 + stLine, 5, 668 + enLine , 5, p);
+
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始但 没有结束
+
+
+                    mCanvas.drawLine(668 + stLine, 5, 985 , 5, p);
+
+                }
+                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
+
+                    mCanvas.drawLine(668,5,985,5,p);
+
+                }
+
+            }
+
+
+
+            if (i == 6) {
+
+
+                if(starpar != i){
+                    stLine=0;
+                }
+
+
+                if (endpar == i) {
+
+
+
+
+                    mCanvas.drawArc(895,5,1075,180,270+stLine,enLine - stLine,false,p);
+
+
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始
+                    mCanvas.drawArc(895,5,1075,180,270+stLine,90-stLine,false,p);
+
+
+
+                }
+
+                if (starpar < i && endpar > i) {
+
+                    mCanvas.drawArc(895,5,1075,180,270,90,false,p);
+
+                }
+
+
+            }
+
+
+
+            if (i == 7) {
+
+                if(starpar != i){
+                    stLine=0;
+                }
+
+
+                if (endpar == i) {
+
+                    mCanvas.drawLine(1074,93+stLine,1074,93+enLine ,p);
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始但 没有结束
+
+
+                    ;
+                    mCanvas.drawLine(1074,93+stLine,1074,2145,p);
+
+                }
+                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
+
+                    mCanvas.drawLine(1074,93,1074,2145,p);
+
+                }
+
+            }
+
+
+
+            if (i == 8) {
+
+
+                if(starpar != i){
+                    stLine=0;
+                }
+
+
+                if (endpar == i) {
+
+
+
+
+                    mCanvas.drawArc(895,2055,1075,2235,0+stLine,enLine - stLine,false,p);
+
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始
+
+                    mCanvas.drawArc(895,2055,1075,2235,0+stLine,90-stLine,false,p);
+
+
+                }
+
+                if (starpar < i && endpar > i) {
+
+                    mCanvas.drawArc(895,2055,1075,2235,0,90,false,p);
+
+                }
+
+
+            }
+
+
+
+
+
+
+
+            if (i == 9) {
+
+                if(starpar != i){
+                    stLine=0;
+                }
+
+
+                if (endpar == i) {
+
+
+
+                  mCanvas.drawLine(986-stLine,2235,986-enLine,2235,p);
+
+
+
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始但 没有结束
+
+
+
+
+                    mCanvas.drawLine(93,2235,986-stLine,2235,p);
+
+                }
+                if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
+
+                    mCanvas.drawLine(986,2235,93,2235,p);
+
+                }
+
+            }
+
+
+            if (i == 10) {
+
+
+                if(starpar != i){
+                    stLine=0;
+                }
+
+
+                if (endpar == i) {
+
+
+
+
+
+                    mCanvas.drawArc(5,2055,180,2235,90+stLine,enLine ,false,p);
+
 
 
 
@@ -487,15 +671,61 @@ public class MainActivity extends AppCompatActivity {
 
                 if (starpar == i && endpar > i) { // 如果是开始
 
-                    mCanvas.drawArc(618, 5, 720, 60, 180+stLine, 85, false, p);
+
+                    mCanvas.drawArc(5,2055,180,2235,90+stLine,90-stLine,false,p);
+
 
                 }
 
+                if (starpar < i && endpar > i) {
+
+                    mCanvas.drawArc(5,2055,180,2235,90,90,false,p);
+
+                }
+
+
+            }
+
+
+
+
+
+
+            if (i == 11) {
+
+                if(starpar != i){
+                    stLine=0;
+                }
+
+
+                if (endpar == i) {
+
+
+
+
+                    mCanvas.drawLine(5,2145-enLine,5,2145-stLine,p);
+
+
+
+                }
+
+
+                if (starpar == i && endpar > i) { // 如果是开始但 没有结束
+
+
+
+
+
+
+                    mCanvas.drawLine(5,2145-stLine,5,2145,p);
+
+                }
                 if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
 
+                    mCanvas.drawLine(5,93,5,2145,p);
 
-                    mCanvas.drawArc(618, 5, 720, 60, 180, 85, false, p);
                 }
+
             }
 
 
@@ -514,6 +744,30 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    protected void  ddd(){
+
+
+    }
+
+
+    int thestep =1;
+    protected void animation(){
+        //每次都要到来这里
+
+thestep++;
+
+
+        DrawRing(thestep*10  , 200+(thestep*10), 100, 100, 100);
+
+
+    }
+
+
+
+
+
+
 
 
 }
