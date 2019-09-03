@@ -16,85 +16,83 @@ public class Edraw1 {
     Canvas mCanvas;
 
 
-
     LLcou llcou;
 
-    public  Edraw1(ImageView imView,Paint ip,Bitmap ibitmap,Canvas imCanvas, LLcou illcou) {
+    public Edraw1(ImageView imView, Paint ip, Bitmap ibitmap, Canvas imCanvas, LLcou illcou) {
 
-        mView=imView;
-        p=ip;
-        bitmap=ibitmap;
-        mCanvas=imCanvas;
-        llcou=illcou;
+        mView = imView;
+        p = ip;
+        bitmap = ibitmap;
+        mCanvas = imCanvas;
+        llcou = illcou;
 
-        int l1s_add=10;
-        line_1_Speed =  new int[17][7];
-        int v3=0;int v4=0;int v2=0;
+        int l1s_add = 10;
+        line_1_Speed = new int[17][7];
+        int v3 = 0;
+        int v4 = 150;
+        int v2 = 0;
 
-        arrayAdd(line_1_Speed,0,0,v2,v3,v4,20,30,30);
+        v2 = 1;
+        v3 = 20;
+        arrayAdd(line_1_Speed, 0, 0, v2, v3, v4, 20, 30, 30);
+        v2 = v2 + 3; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 1, 0, v2, v3, v4, 33, 30, 30);
+        v2 = v2 + 2; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 2, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 + 2; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 3, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 + 2; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 4, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 + 2; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 5, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 + 2; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 6, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 + 2; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 7, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 + 2; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 8, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 + 2; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 9, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 - 4; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 10, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 - 4; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 11, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 - 4; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 12, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 - 4; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 13, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 - 4; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 14, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 - 4; v3 = v3 + 5;
+        arrayAdd(line_1_Speed, 15, 0, v2, v3, v4, 30, 30, 30);
+        v2 = v2 - 4; v3 = v3 + 5;
 
-        arrayAdd(line_1_Speed,1,0,v2,v3,v4,33,30,30);
-
-        arrayAdd(line_1_Speed,2,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,3,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,4,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,5,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,6,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,7,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,8,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,9,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,10,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,11,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,12,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,13,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,14,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,15,0,v2,v3,v4,30,30,30);
-
-
-        arrayAdd(line_1_Speed,16,0,v2,v3,v4,30,30,30);
-
-
-
-
+        arrayAdd(line_1_Speed, 16, 0, v2, v3, v4, 30, 30, 30);
 
 
     }
 
 
-    public void arrayAdd(int[][] arr,int arrnum,int v1,int v2,int v3,int v4 ,int vR ,int vG,int vB){
-        arr[arrnum][0]=v1;
-        arr[arrnum][1]=v2;
-        arr[arrnum][2]=v3;
-        arr[arrnum][3]=v4;
-        arr[arrnum][4]=vR;
-        arr[arrnum][5]=vG;
-        arr[arrnum][6]=vB;
+    public void arrayAdd(int[][] arr, int arrnum, int v1, int v2, int v3, int v4, int vR, int vG, int vB) {
+        arr[arrnum][0] = v1;
+        arr[arrnum][1] = v2;
+        arr[arrnum][2] = v3;
+        arr[arrnum][3] = v4;
+        arr[arrnum][4] = vR;
+        arr[arrnum][5] = vG;
+        arr[arrnum][6] = vB;
 
     }
-
 
 
     int line_1_Frame = 2000;
     int line_1_the_Frame = 0;
-    int[][] line_1_Speed ;
+    int[][] line_1_Speed;
 
     public void Run_next() {
         m_The_Frame++;
 
-        if(m_The_Frame< 190) {
+        if (m_The_Frame < 190) {
 
             drawing_line1();
         }
@@ -104,8 +102,8 @@ public class Edraw1 {
     int dl_1_LP = 1;
     int l_1_Key_N = 1; //下一个关键帧切换点
     int st = 0, en = 0;
-    protected void drawing_line1() {
 
+    protected void drawing_line1() {
 
 
         if (l_1_Key_N < line_1_Speed.length) {
@@ -124,8 +122,6 @@ public class Edraw1 {
 
 
     }
-
-
 
 
     public void DrawRing(int dstart, int dlong, int cR, int cG, int cB) {
@@ -210,7 +206,7 @@ public class Edraw1 {
 
                 if (starpar == i && endpar > i) { // 如果是开始
 
-                    mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, 90-stLine , false, p);
+                    mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, 90 - stLine, false, p);
 
                 }
 
@@ -226,20 +222,20 @@ public class Edraw1 {
 
             if (i == 1) {
 
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
 
                 if (endpar == i) {
-                    mCanvas.drawLine(93 + stLine, 5, 93 + enLine , 5, p);
+                    mCanvas.drawLine(93 + stLine, 5, 93 + enLine, 5, p);
                 }
 
 
                 if (starpar == i && endpar > i) { // 如果是开始但 没有结束
 
 
-                    mCanvas.drawLine(93 + stLine, 5, 412 , 5, p);
+                    mCanvas.drawLine(93 + stLine, 5, 412, 5, p);
 
                 }
                 if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
@@ -252,8 +248,8 @@ public class Edraw1 {
 
 
             if (i == 2) {
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
                 //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
@@ -264,7 +260,7 @@ public class Edraw1 {
 
                 if (starpar == i && endpar > i) { // 如果是开始
 
-                    mCanvas.drawArc(360, 5, 462, 60, -90 + stLine, 90-stLine , false, p);
+                    mCanvas.drawArc(360, 5, 462, 60, -90 + stLine, 90 - stLine, false, p);
                 }
 
                 if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
@@ -274,18 +270,15 @@ public class Edraw1 {
             }
 
 
-
-
-
             if (i == 3) {
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
                 //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
                 if (endpar == i) {
 
-                    mCanvas.drawArc(461, -70, 619, 100, 170- stLine, (enLine - stLine)* -1, false, p);
+                    mCanvas.drawArc(461, -70, 619, 100, 170 - stLine, (enLine - stLine) * -1, false, p);
 
 
                 }
@@ -293,7 +286,7 @@ public class Edraw1 {
 
                 if (starpar == i && endpar > i) { // 如果是开始
 
-                    mCanvas.drawArc(461, -70, 619, 100, 170 - stLine, (155 - stLine)*-1, false, p);
+                    mCanvas.drawArc(461, -70, 619, 100, 170 - stLine, (155 - stLine) * -1, false, p);
 
 
                 }
@@ -306,18 +299,15 @@ public class Edraw1 {
             }
 
 
-
-
-
             if (i == 4) {
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
                 //mCanvas.drawArc(5, 5, 180, 180, 180 + stLine, enLine - stLine, false, p);
                 if (endpar == i) {
 
-                    mCanvas.drawArc(616, 5, 720, 76, 185+stLine, enLine - stLine, false, p);
+                    mCanvas.drawArc(616, 5, 720, 76, 185 + stLine, enLine - stLine, false, p);
 
 
                 }
@@ -325,7 +315,7 @@ public class Edraw1 {
 
                 if (starpar == i && endpar > i) { // 如果是开始
 
-                    mCanvas.drawArc(616, 5, 720, 76, 185+stLine, 90-stLine , false, p);
+                    mCanvas.drawArc(616, 5, 720, 76, 185 + stLine, 90 - stLine, false, p);
 
                 }
 
@@ -337,16 +327,15 @@ public class Edraw1 {
             }
 
 
-
             if (i == 5) {
 
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
 
                 if (endpar == i) {
-                    mCanvas.drawLine(668 + stLine, 5, 668 + enLine , 5, p);
+                    mCanvas.drawLine(668 + stLine, 5, 668 + enLine, 5, p);
 
                 }
 
@@ -354,48 +343,44 @@ public class Edraw1 {
                 if (starpar == i && endpar > i) { // 如果是开始但 没有结束
 
 
-                    mCanvas.drawLine(668 + stLine, 5, 985 , 5, p);
+                    mCanvas.drawLine(668 + stLine, 5, 985, 5, p);
 
                 }
                 if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
 
-                    mCanvas.drawLine(668,5,985,5,p);
+                    mCanvas.drawLine(668, 5, 985, 5, p);
 
                 }
 
             }
 
 
-
             if (i == 6) {
 
 
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
 
                 if (endpar == i) {
 
 
-
-
-                    mCanvas.drawArc(895,5,1075,180,270+stLine,enLine - stLine,false,p);
+                    mCanvas.drawArc(895, 5, 1075, 180, 270 + stLine, enLine - stLine, false, p);
 
 
                 }
 
 
                 if (starpar == i && endpar > i) { // 如果是开始
-                    mCanvas.drawArc(895,5,1075,180,270+stLine,90-stLine,false,p);
-
+                    mCanvas.drawArc(895, 5, 1075, 180, 270 + stLine, 90 - stLine, false, p);
 
 
                 }
 
                 if (starpar < i && endpar > i) {
 
-                    mCanvas.drawArc(895,5,1075,180,270,90,false,p);
+                    mCanvas.drawArc(895, 5, 1075, 180, 270, 90, false, p);
 
                 }
 
@@ -403,17 +388,16 @@ public class Edraw1 {
             }
 
 
-
             if (i == 7) {
 
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
 
                 if (endpar == i) {
 
-                    mCanvas.drawLine(1074,93+stLine,1074,93+enLine ,p);
+                    mCanvas.drawLine(1074, 93 + stLine, 1074, 93 + enLine, p);
                 }
 
 
@@ -421,47 +405,44 @@ public class Edraw1 {
 
 
                     ;
-                    mCanvas.drawLine(1074,93+stLine,1074,2145,p);
+                    mCanvas.drawLine(1074, 93 + stLine, 1074, 2145, p);
 
                 }
                 if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
 
-                    mCanvas.drawLine(1074,93,1074,2145,p);
+                    mCanvas.drawLine(1074, 93, 1074, 2145, p);
 
                 }
 
             }
 
 
-
             if (i == 8) {
 
 
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
 
                 if (endpar == i) {
 
 
-
-
-                    mCanvas.drawArc(895,2055,1075,2235,0+stLine,enLine - stLine,false,p);
+                    mCanvas.drawArc(895, 2055, 1075, 2235, 0 + stLine, enLine - stLine, false, p);
 
                 }
 
 
                 if (starpar == i && endpar > i) { // 如果是开始
 
-                    mCanvas.drawArc(895,2055,1075,2235,0+stLine,90-stLine,false,p);
+                    mCanvas.drawArc(895, 2055, 1075, 2235, 0 + stLine, 90 - stLine, false, p);
 
 
                 }
 
                 if (starpar < i && endpar > i) {
 
-                    mCanvas.drawArc(895,2055,1075,2235,0,90,false,p);
+                    mCanvas.drawArc(895, 2055, 1075, 2235, 0, 90, false, p);
 
                 }
 
@@ -469,24 +450,17 @@ public class Edraw1 {
             }
 
 
-
-
-
-
-
             if (i == 9) {
 
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
 
                 if (endpar == i) {
 
 
-
-                    mCanvas.drawLine(986-stLine,2235,986-enLine,2235,p);
-
+                    mCanvas.drawLine(986 - stLine, 2235, 986 - enLine, 2235, p);
 
 
                 }
@@ -495,14 +469,12 @@ public class Edraw1 {
                 if (starpar == i && endpar > i) { // 如果是开始但 没有结束
 
 
-
-
-                    mCanvas.drawLine(93,2235,986-stLine,2235,p);
+                    mCanvas.drawLine(93, 2235, 986 - stLine, 2235, p);
 
                 }
                 if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
 
-                    mCanvas.drawLine(986,2235,93,2235,p);
+                    mCanvas.drawLine(986, 2235, 93, 2235, p);
 
                 }
 
@@ -512,20 +484,15 @@ public class Edraw1 {
             if (i == 10) {
 
 
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
 
                 if (endpar == i) {
 
 
-
-
-
-                    mCanvas.drawArc(5,2055,180,2235,90+stLine,enLine ,false,p);
-
-
+                    mCanvas.drawArc(5, 2055, 180, 2235, 90 + stLine, enLine, false, p);
 
 
                 }
@@ -534,14 +501,14 @@ public class Edraw1 {
                 if (starpar == i && endpar > i) { // 如果是开始
 
 
-                    mCanvas.drawArc(5,2055,180,2235,90+stLine,90-stLine,false,p);
+                    mCanvas.drawArc(5, 2055, 180, 2235, 90 + stLine, 90 - stLine, false, p);
 
 
                 }
 
                 if (starpar < i && endpar > i) {
 
-                    mCanvas.drawArc(5,2055,180,2235,90,90,false,p);
+                    mCanvas.drawArc(5, 2055, 180, 2235, 90, 90, false, p);
 
                 }
 
@@ -549,24 +516,17 @@ public class Edraw1 {
             }
 
 
-
-
-
-
             if (i == 11) {
 
-                if(starpar != i){
-                    stLine=0;
+                if (starpar != i) {
+                    stLine = 0;
                 }
 
 
                 if (endpar == i) {
 
 
-
-
-                    mCanvas.drawLine(5,2145-enLine,5,2145-stLine,p);
-
+                    mCanvas.drawLine(5, 2145 - enLine, 5, 2145 - stLine, p);
 
 
                 }
@@ -575,24 +535,16 @@ public class Edraw1 {
                 if (starpar == i && endpar > i) { // 如果是开始但 没有结束
 
 
-
-
-
-
-                    mCanvas.drawLine(5,2145-stLine,5,2145,p);
+                    mCanvas.drawLine(5, 2145 - stLine, 5, 2145, p);
 
                 }
                 if (starpar < i && endpar > i) {  // 如果是中间线段则画完整线段
 
-                    mCanvas.drawLine(5,93,5,2145,p);
+                    mCanvas.drawLine(5, 93, 5, 2145, p);
 
                 }
 
             }
-
-
-
-
 
 
         }
@@ -606,10 +558,6 @@ public class Edraw1 {
 
 
     }
-
-
-
-
 
 
 }
