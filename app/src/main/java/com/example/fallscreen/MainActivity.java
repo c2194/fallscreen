@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
         edraw1= new Edraw1(mView,p,bitmap,mCanvas,llcou);
 
-      //  edraw1.DrawRing(1186, 1336, 100, 100, 100);
-         new Thread(new TimThread ()).start();
+        //edraw1.DrawRing(0, 6323, 255, 100, 100);
+       //  new Thread(new TimThread ()).start();
 
      //   edraw1.DrawRing(1,150,0,0,0);
 
