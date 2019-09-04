@@ -29,42 +29,46 @@ public class Edraw1 {
 
         int l1s_add=10;
         line_1_Speed =  new int[17][7];
-        int v3=0;int v4=0;int v2=0;
+        int v3=0;int v4=0;int v2=0;;int v5=0;int v6=0; int v7=0;
 
-        arrayAdd(line_1_Speed,0,0,v2,v3,v4,20,30,30);
+        aAdd=0;
 
-        arrayAdd(line_1_Speed,1,0,v2,v3,v4,33,30,30);
+        v4=150;
+        v2=1;v3=v3+2;v5=50;v6=30;v7=30;
+        arrayAdd(line_1_Speed,16,0,v2,v3,v4,v5,v6,v7);
+        v2=v2+1;v3=v3+20;v5=40;v6=40;v7=40;
+        arrayAdd(line_1_Speed,0,0,v2,v3,v4,v5,v6,v7);
+        v2=v2+1;v3=v3+10;v5=v5+70;v6=v6+70;v7=v7+70;
+        arrayAdd(line_1_Speed,1,0,v2,v3,v4,v5,v6,v7);
+        v2=v2+2;v3=v3+10;v5=v5+100;v6=v6+100;v7=v7+100;
+        arrayAdd(line_1_Speed,2,0,v2,v3,v4,v5,v6,v7);
+        v2=v2+1;v3=v3+60;  v5=v5+55;  v6=v6+55;  v7=v7+55;
+        arrayAdd(line_1_Speed,3,0,v2,v3,v4,v5,v6,v7);
+        v2=v2-2;v3=v3+95;v5=v5-55;v6=v6-55;v7=v7-55;
+        arrayAdd(line_1_Speed,4,0,v2,v3,v4,v5,v6,v7);
+        v2=v2-1;v3=v3+20;v5=v5-40;v6=v6-40;v7=v7-40;
+        arrayAdd(line_1_Speed,5,0,v2,v3,v4,v5,v6,v7);
+        v3=v3+20;v5=v5-40;v6=v6-40;v7=v7-40;
+        arrayAdd(line_1_Speed,6,0,v2,v3,v4,v5,v6,v7);
+        v3=v3+20;v5=v5-40;v6=v6-40;v7=v7-40;
+        arrayAdd(line_1_Speed,7,0,v2,v3,v4,v5,v6,v7);
+        v3=v3+20;v5=v5-40;v6=v6-40;v7=v7-40;
+        arrayAdd(line_1_Speed,8,0,v2,v3,v4,v5,v6,v7);
+        v2=v2-2;v3=v3-30;
+        arrayAdd(line_1_Speed,9,0,v2,v3,v4,v5,v6,v7);
+        v2=v2-2;v3=v3-5;
+        arrayAdd(line_1_Speed,10,0,v2,v3,v4,v5,v6,v7);
+        v2=v2-2;v3=v3-5;
+        arrayAdd(line_1_Speed,11,0,v2,v3,v4,v5,v6,v7);
+        v2=v2-2;v3=v3-5;
+        arrayAdd(line_1_Speed,12,0,v2,v3,v4,v5,v6,v7);
+        v2=1;v3=v3-5;
+        arrayAdd(line_1_Speed,13,0,v2,v3,v4,v5,v6,v7);
 
-        arrayAdd(line_1_Speed,2,0,v2,v3,v4,30,30,30);
+        arrayAdd(line_1_Speed,14,0,v2,v3,v4,v5,v6,v7);
 
-        arrayAdd(line_1_Speed,3,0,v2,v3,v4,30,30,30);
+        arrayAdd(line_1_Speed,15,0,v2,v3,v4,v5,v6,v7);
 
-        arrayAdd(line_1_Speed,4,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,5,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,6,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,7,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,8,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,9,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,10,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,11,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,12,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,13,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,14,0,v2,v3,v4,30,30,30);
-
-        arrayAdd(line_1_Speed,15,0,v2,v3,v4,30,30,30);
-
-
-        arrayAdd(line_1_Speed,16,0,v2,v3,v4,30,30,30);
 
 
 
@@ -73,15 +77,17 @@ public class Edraw1 {
 
     }
 
-
+    int aAdd=0;
     public void arrayAdd(int[][] arr,int arrnum,int v1,int v2,int v3,int v4 ,int vR ,int vG,int vB){
-        arr[arrnum][0]=v1;
-        arr[arrnum][1]=v2;
-        arr[arrnum][2]=v3;
-        arr[arrnum][3]=v4;
-        arr[arrnum][4]=vR;
-        arr[arrnum][5]=vG;
-        arr[arrnum][6]=vB;
+
+        arr[aAdd][0]=v1;
+        arr[aAdd][1]=v2;
+        arr[aAdd][2]=v3;
+        arr[aAdd][3]=v4;
+        arr[aAdd][4]=vR;
+        arr[aAdd][5]=vG;
+        arr[aAdd][6]=vB;
+        aAdd++;
 
     }
 
@@ -90,28 +96,76 @@ public class Edraw1 {
     int line_1_Frame = 2000;
     int line_1_the_Frame = 0;
     int[][] line_1_Speed ;
-
+    int up_st=1,up_en=2;
     public void Run_next() {
         m_The_Frame++;
 
-        if(m_The_Frame< 190) {
+        if(m_The_Frame< 300) {
 
             drawing_line1();
         }
+
+
+
+        mView.setImageBitmap(bitmap);
+
 
     }
 
     int dl_1_LP = 1;
     int l_1_Key_N = 1; //下一个关键帧切换点
     int st = 0, en = 0;
+    float teR=0,teG=0,teB=0;
+    float nR=0,nG=0,nB=0;
+    int hR=0,hG=0,hB=0;
+
     protected void drawing_line1() {
 
 
 
         if (l_1_Key_N < line_1_Speed.length) {
             if (m_The_Frame == line_1_Speed[l_1_Key_N][2]) {
+
                 //帧数据切换
                 l_1_Key_N++;
+
+                System.out.println(" --- >>" + line_1_Speed[l_1_Key_N][2] + " --- " +line_1_Speed[l_1_Key_N-1][2]);
+
+                if(line_1_Speed[l_1_Key_N][4]>line_1_Speed[l_1_Key_N-1][4] || line_1_Speed[l_1_Key_N][4]<line_1_Speed[l_1_Key_N-1][4]){
+
+
+                    //求出单帧的变化值--浮点类型
+                    nR=(float)(line_1_Speed[l_1_Key_N][2]-line_1_Speed[l_1_Key_N-1][2]) / (line_1_Speed[l_1_Key_N][4] - line_1_Speed[l_1_Key_N-1][4]);
+
+                }else{
+                    nR =0;
+                }
+
+                if(line_1_Speed[l_1_Key_N][5]>line_1_Speed[l_1_Key_N-1][5] ||line_1_Speed[l_1_Key_N][5]<line_1_Speed[l_1_Key_N-1][5] ){
+
+
+                    //求出单帧的变化值--浮点类型
+                    nG=(float)(line_1_Speed[l_1_Key_N][2]-line_1_Speed[l_1_Key_N-1][2]) / (line_1_Speed[l_1_Key_N][5] - line_1_Speed[l_1_Key_N-1][5]);
+
+                }else{
+                    nG=0;
+                }
+
+
+                if(line_1_Speed[l_1_Key_N][6]>line_1_Speed[l_1_Key_N-1][6] || line_1_Speed[l_1_Key_N][6]<line_1_Speed[l_1_Key_N-1][6] ){
+
+
+                    //求出单帧的变化值--浮点类型
+                    nB=(float)(line_1_Speed[l_1_Key_N][2]-line_1_Speed[l_1_Key_N-1][2]) / (line_1_Speed[l_1_Key_N][6] - line_1_Speed[l_1_Key_N-1][6]);
+
+                }else {
+
+                    nB=0;
+
+                }
+
+
+
             }
         }
 
@@ -119,11 +173,37 @@ public class Edraw1 {
         st = st + line_1_Speed[l_1_Key_N - 1][1];
         en = st + line_1_Speed[l_1_Key_N - 1][3];
 
+        teR = teR+nR;
+        teG = teG+nG;
+        teB = teB+nB;
 
-        DrawRing(st, en, line_1_Speed[l_1_Key_N - 1][4], line_1_Speed[l_1_Key_N - 1][5], line_1_Speed[l_1_Key_N - 1][6]);
+
+        int oR=0,oG=0,oB=0;
+
+        oR=  line_1_Speed[l_1_Key_N - 1][4]+(int)teR;
+        oG= line_1_Speed[l_1_Key_N - 1][5]+(int)teG;
+        oB= line_1_Speed[l_1_Key_N - 1][6]+(int)teB;
+
+        if (oR > 255) oR=255;
+        if (oG > 255) oG=255;
+        if (oB > 255) oB=255;
+        if(oR<0) oR=0;
+        if(oG<0) oG=0;
+        if(oB<0) oB=0;
+
+
+        DrawRing(up_st,up_en,1,1,1);
+        DrawRing(st, en, oR, oG, oB);
+        up_en=en;
+        up_st =st;
+
+        System.out.println(st + " | " + en  +" | " + oR + " | " + oG + " | " + oB  );
+
+
 
 
     }
+
 
 
 
@@ -163,7 +243,7 @@ public class Edraw1 {
 
         p.setARGB(255, cR, cG, cB);
         p.setStyle(Paint.Style.STROKE);
-        mCanvas.drawARGB(255, 0, 0, 0);
+        mCanvas.drawARGB(0, 0, 0, 0);
 
 
         for (int i = 0; i < rplength; i++) {
@@ -602,7 +682,7 @@ public class Edraw1 {
         int past = 0;
 
 
-        mView.setImageBitmap(bitmap);
+
 
 
     }

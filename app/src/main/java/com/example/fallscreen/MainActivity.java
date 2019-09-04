@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.DrawFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +16,7 @@ import android.os.Message;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,13 +37,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        ////
+
+        TextView tview1 = (TextView) findViewById(R.id.textView);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "font/Electrolize-Regular.ttf");
+        tview1.setTypeface(typeface);
+
+
+        ///
+
+
+
+
         mView = (ImageView) findViewById(R.id.imageView);
         p = new Paint();
         p.setColor(Color.argb(255, 255, 100, 100));
         bitmap = Bitmap.createBitmap(1080, 2250, Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(bitmap);
 
-        mCanvas.drawARGB(255, 0, 0, 0);
+        mCanvas.drawARGB(160, 0, 0, 0);
         //  mCanvas.drawRect(10, 10, 200, 200, p);
         // mCanvas.drawARGB(255,0,0,0);
         mView.setImageBitmap(bitmap);
@@ -57,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         edraw1= new Edraw1(mView,p,bitmap,mCanvas,llcou);
 
-
+      //  edraw1.DrawRing(1186, 1336, 100, 100, 100);
          new Thread(new TimThread ()).start();
 
      //   edraw1.DrawRing(1,150,0,0,0);
@@ -113,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             while (true) {
                 try {
-                    Thread.sleep(30);//每隔1s执行一次
+                    Thread.sleep(20);//每隔1s执行一次
                     Message msg = new Message();
                     msg.what = 1;
                     handler.sendMessage(msg);
