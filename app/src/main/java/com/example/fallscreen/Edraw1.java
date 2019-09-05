@@ -36,13 +36,13 @@
         aAdd=0;
 
         v4=150;
-        v2=1;v3=v3+2;v5=50;v6=30;v7=30;
+        v2=1;v3=v3+2;v5=30;v6=30;v7=30;
         arrayAdd(line_1_Speed,16,0,v2,v3,v4,v5,v6,v7);
-        v2=v2+1;v3=v3+20;v5=40;v6=40;v7=40;
+        v2=v2+1;v3=v3+20;v5=40;v6=70;v7=40;
         arrayAdd(line_1_Speed,0,0,v2,v3,v4,v5,v6,v7);
-        v2=v2+1;v3=v3+10;v5=v5+70;v6=v6+70;v7=v7+70;
+        v2=v2+1;v3=v3+10;v5=v5+70;v6=v6+90;v7=v7+70;
         arrayAdd(line_1_Speed,1,0,v2,v3,v4,v5,v6,v7);
-        v2=v2+2;v3=v3+10;v5=v5+100;v6=v6+100;v7=v7+100;
+        v2=v2+2;v3=v3+10;v5=v5+10;v6=v6+100;v7=v7+10;
         arrayAdd(line_1_Speed,2,0,v2,v3,v4,v5,v6,v7);
         v2=v2+1;v3=v3+60;  v5=v5+55;  v6=v6+55;  v7=v7+55;
         arrayAdd(line_1_Speed,3,0,v2,v3,v4,v5,v6,v7);
@@ -102,15 +102,25 @@
         public void Run_next() {
         m_The_Frame++;
 
-        if(m_The_Frame< 300) {
+            if(m_The_Frame> 0 && m_The_Frame < 230  )  {
 
-        drawing_line1();
-        }
+                drawing_line1();
+            }
+
+            if(m_The_Frame> 230 && m_The_Frame < 730  )  {
+
+                drawing_line_2();
+            }
 
 
 
-        mView.setImageBitmap(bitmap);
+            if(m_The_Frame > 1000) {
 
+                m_The_Frame = 1000;
+            }else {
+
+                mView.setImageBitmap(bitmap);
+            }
 
         }
 
@@ -131,7 +141,7 @@
         //帧数据切换
         l_1_Key_N++;
 
-        System.out.println(" --- >>" + line_1_Speed[l_1_Key_N][2] + " --- " +line_1_Speed[l_1_Key_N-1][2]);
+        //System.out.println(" --- >>" + line_1_Speed[l_1_Key_N][2] + " --- " +line_1_Speed[l_1_Key_N-1][2]);
 
         if(line_1_Speed[l_1_Key_N][4]>line_1_Speed[l_1_Key_N-1][4] || line_1_Speed[l_1_Key_N][4]<line_1_Speed[l_1_Key_N-1][4]){
 
@@ -214,22 +224,58 @@
 
         int[][] l2_rgb = new int[][]{
 
-                {0,50,50,50},
-                {10,220,220,220},
-                {10,255,255,255},
-                {12,50,50,50},
-                {10,180,180,180},
-                {10,50,50,50},
-                {12,255,255,255},
-                {100,30,30,30},
+                {1,1,1,1},
+                {100,70,220,111},
+                {150,255,255,255},
+                {190,10,100,50},
+                {240,180,250,180},
+                {310,50,50,2},
+                {380,255,255,255},
+                {500,1,1,1},
+                {0,0,0,00},
 
 
         } ;
 
         float nR2=0,nG2=0,nB2=0;
         float teR2=0,teB2=0,teG2=0;
+        int next_frame=0;
+        int l_2_Key_N = 1;
 
         protected void drawing_line_2(){
+            next_frame++;
+            if (l_2_Key_N < l2_rgb.length ){
+
+                if(next_frame == l2_rgb[l_2_Key_N-1][0]){  //如果是关键帧点
+
+                    teR2 = (float) (l2_rgb[l_2_Key_N][1] - l2_rgb[l_2_Key_N-1][1]) / (l2_rgb[l_2_Key_N][0]-l2_rgb[l_2_Key_N-1][0]);
+                    teG2 = (float) (l2_rgb[l_2_Key_N][2] - l2_rgb[l_2_Key_N-1][2]) /(l2_rgb[l_2_Key_N][0]-l2_rgb[l_2_Key_N-1][0])  ;
+                    teB2 = (float) (l2_rgb[l_2_Key_N][3] - l2_rgb[l_2_Key_N-1][3]) /(l2_rgb[l_2_Key_N][0]-l2_rgb[l_2_Key_N-1][0])  ;
+                    nR2=l2_rgb[l_2_Key_N-1][1];
+                    nG2=l2_rgb[l_2_Key_N-1][2];
+                    nB2=l2_rgb[l_2_Key_N-1][3];
+                 //   System.out.println( " ---------------------------------- | " + teR2 + " | " + teG2 + " | " + teB2  );
+                    l_2_Key_N++;
+
+                }
+
+                DrawRing(0, 6323,(int)nR2, (int)nG2, (int)nB2);
+
+              System.out.println(next_frame + " | " + nR2 + " | " + nG2 + " | " + nB2  );
+
+                nR2=nR2+teR2;
+                nG2=nG2+teG2;
+                nB2=nB2+teB2;
+
+
+            }else{
+                 next_frame=0;
+                 l_2_Key_N = 1;
+
+            }
+
+
+
 
 
 
